@@ -1,0 +1,12 @@
+
+input,button{
+    border:none;
+    background-color:#e9ecef;
+}
+p{
+    color:red
+}
+.container{
+    height: 500px;
+}
+

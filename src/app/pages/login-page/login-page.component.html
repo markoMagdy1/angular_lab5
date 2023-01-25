@@ -1,0 +1,31 @@
+<div class="container mt-5 col-6">
+    <div class="row mt-5 justify-content-center align-item-center">
+        <form [formGroup]="loginForm" >
+        <label class="col-3  p-y fs-4 text-center"   for="">Name:</label>
+        <input formControlName="name" class="col-8 m-2 p-2 rounded-4" type="text" placeholder="enter your name">
+        <ng-container *ngIf="getName.touched" class="text-center">
+        <p *ngIf="getName.hasError('required')" class="text-center"> enter an your y 3m  </p>
+        <p *ngIf="getName.hasError('minlength')" class="text-center"> enter an your must be 3 char at least   </p>
+        </ng-container>
+        <label class="col-3  p-2 fs-4 text-center"   for="">Email:</label>
+        <input formControlName="email" class="col-8 m-2 p-2 rounded-4" type="text" placeholder="enter your name">
+        <ng-container *ngIf="getEmail.touched" class="text-center">
+            <p *ngIf="getEmail.hasError('required')" class="text-center"> enter an email y 3m  </p>
+            <p *ngIf="getEmail.hasError('email')" class="text-center"> enter a correct email b2a </p>
+            </ng-container>
+        <label class="col-3  p-2 fs-4 text-center"   for="">Password:</label>
+        <input  formControlName="password" class="col-8 m-2 p-2 rounded-4" type="text" placeholder="enter your name">
+        <ng-container *ngIf="getPassword.touched" class="text-center">
+            <p *ngIf="getPassword.hasError('required')" class="text-center"> enter an password y 3m  </p>
+            <p *ngIf="getPassword.hasError('minlength')" class="text-center"> password must be 8 char at least  </p>
+            </ng-container>
+            <div class="d-flex justify-content-center">
+                <button *ngIf="userId"  (click)="editUser()" class="col-3 my-2 p-1 text-center" > Edit User </button>
+                <button *ngIf="!userId"  (click)="login()" class="col-3 my-2 p-1 text-center" > Add User </button>
+            </div>
+
+        </form>
+        
+
+    </div>
+</div>
